@@ -1,17 +1,19 @@
 myTasks = [] // array containing the task objects
-taskName = document.getElementById("taskName");
-taskCategory = document.getElementById("taskCategory");
-taskDeadline = document.getElementById("taskDeadline");
-taskStatus = document.getElementById("taskStatus");
-addTaskButton = document.getElementById("addTaskButton");
-taskList = document.getElementById("taskList");
+myTasksFiltered = [] // array for filtered tasks
+taskName = document.getElementById("taskName"); //task info
+taskCategory = document.getElementById("taskCategory"); //task info
+taskDeadline = document.getElementById("taskDeadline"); //task info
+taskStatus = document.getElementById("taskStatus"); //task info
+addTaskButton = document.getElementById("addTaskButton"); // add button
+taskList = document.getElementById("taskList"); // the unordered list
 
 function addTask(task) {
-        myTasks.push(task) //add task object to the myTasks array
+    myTasks.push(task) //add task object to the myTasks array
 }
 
-function updateStatus(update) {
-
+function updateStatus(){ // function updateStatus(update) {
+    let idStatus = document.getElementById("idStatus")
+    idStatus.addEventListener("change", function(status){alert("a alert")})
 }
 
 function filterTasks(searchTerm) {
@@ -23,33 +25,38 @@ function updateTasks() {
     for (i=0;i<myTasks.length;i++) {
         listTask = document.createElement("ul") // changed from li to ul to contain sublist
         listName = document.createElement("li") // the sublist
-        listCategory = document.createElement("li")
-        listDeadline = document.createElement("li")
-        listStatus = document.createElement("li")
-
+        listCategory = document.createElement("li") // the sublist
+        listDeadline = document.createElement("li") // the sublist
+        listStatus = document.createElement("li") // the sublist
 
         updateStatusDropdown = document.createElement("select") //creates the dropdown menu
-        optionInProgress = document.createElement("option") //creates dropdown options
-        optionCompleted = document.createElement("option")
-        optionOverdue = document.createElement("option")
-        optionInProgress.innerHTML = "In Progress"
-        optionCompleted.innerHTML = "Completed"
-        optionOverdue.innerHTML = "Overdue"
+        updateStatusDropdown.setAttribute("id", "idStatus")
 
-        
+        optionInProgress = document.createElement("option") //creates dropdown option
+        optionCompleted = document.createElement("option") //creates dropdown option
+        optionOverdue = document.createElement("option") //creates dropdown option
+        optionInProgress.innerHTML = "In Progress" // assigns text to option
+        optionCompleted.innerHTML = "Completed" // assigns text to option
+        optionOverdue.innerHTML = "Overdue" // assigns text to option
+
+        optionOverdue.addEventListener("click", function(){alert("an alert"); console.log("a console log")})
 
         listName.innerText = "Task: " + myTasks[i].name
         listCategory.innerText = "Category: " + myTasks[i].category
         listDeadline.innerText = "Deadline: " + myTasks[i].deadline
         listStatus.innerText = "Status: " + myTasks[i].status
-        updateStatusDropdown.append(optionInProgress, optionCompleted, optionOverdue)
-        listStatus.append(updateStatusDropdown)
-        listTask.append(listName, listCategory, listDeadline, listStatus, updateStatusDropdown) // append sublist to list (task)
-        taskList.append(listTask, document.createElement("p")) // append list (task) to list (list of tasks)
+
+        updateStatusDropdown.append(optionInProgress, optionCompleted, optionOverdue) // append options to dropdown menu
+        listStatus.append(updateStatusDropdown) // append dropdown menu to Status
+        listTask.append(listName, listCategory, listDeadline, listStatus, updateStatusDropdown) // append sublist (current task info) to list (current task)
+        taskList.append(listTask, document.createElement("p")) // append list (current task) to list (list of all tasks)
+        
     }
 }
 
-addTaskButton.addEventListener("click", function () {
+
+
+addTaskButton.addEventListener("click", function() {
   taskObject = {
     name:taskName.value,
     category:taskCategory.value,
@@ -62,11 +69,16 @@ addTaskButton.addEventListener("click", function () {
   }
   addTask(taskObject)
   updateTasks()
+  updateStatus()
   taskName.value = ""
   taskCategory.value = ""
   taskDeadline.value = ""
   taskStatus.value = ""
 })
+
+
+
+// document.getElementsByClassName("anOption").addEventListener("click", function(){alert("flag")})
 
 
 
