@@ -37,15 +37,17 @@ function updateTasks() {
         listTask.appendChild(listDeadline)
         listTask.appendChild(listStatus)
         taskList.appendChild(listTask)
+        taskList.appendChild(document.createElement("p"))
     }
 }
 
 addTaskButton.addEventListener("click", function () {
-  taskObject = {}
-  taskObject.name = taskName.value
-  taskObject.category = taskCategory.value
-  taskObject.deadline = taskDeadline.value
-  taskObject.status = taskStatus.value
+  taskObject = {
+    name:taskName.value,
+    category:taskCategory.value,
+    deadline:taskDeadline.value,
+    status:taskStatus.value
+  }
  alert(taskObject.name) // Dev alert to show taskObject receives data. Helpful to know when to use .value
   if (taskObject.name === "" || taskObject.category === "" || taskObject.deadline === "" || taskObject.status === "") {
     alert("Please enter all fields before adding a task!")
