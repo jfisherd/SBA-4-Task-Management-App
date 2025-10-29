@@ -24,6 +24,7 @@ function updateTasks() {
     taskList.innerHTML = ""
     for (i=0;i<myTasks.length;i++) {
         listTask = document.createElement("li")
+        listInner = document.createElement("li")
         listTask.innerText = myTasks[i]
         taskList.appendChild(listTask)
     }
@@ -31,25 +32,25 @@ function updateTasks() {
 
 addTaskButton.addEventListener("click", function () {
   taskObject = {}
-  taskObject.name = taskName
-  taskObject.category = taskCategory
-  taskObject.deadline = taskDeadline
-  taskObject.status = taskStatus
- 
-  if (taskName === "" || taskCategory === "" || taskDeadline === "" || taskStatus=== "") {
+  taskObject.name = taskName.value
+  taskObject.category = taskCategory.value
+  taskObject.deadline = taskDeadline.value
+  taskObject.status = taskStatus.value
+ alert(taskObject.name) // Dev alert to show taskObject receives data. Helpful to know when to use .value
+  if (taskObject.name === "" || taskObject.category === "" || taskObject.deadline === "" || taskObject.status === "") {
     alert("Please enter all fields before adding a task!")
-    return
+    return 
   }
   addTask(taskObject)
   updateTasks()
-  taskName = "" 
-  taskCategory = ""
-  taskDeadline = ""
-  taskStatus = ""
+  taskName.value = ""
+  taskCategory.value = ""
+  taskDeadline.value = ""
+  taskStatus.value = ""
   alert(taskObject)
 })
 
-alert({a:1,b:2})
+// alert({a:1,b:2}) // Test to see how objects are shown to the user [object Object]. Keep for reference for when [object Object] shows up again
 
 
 
