@@ -40,12 +40,16 @@ addTaskButton.addEventListener("click", function () {
     alert("Please enter all fields before adding a task!")
     return
   }
-  addItem(taskObject)
-  updateCart()
-  itemInput.value = "" 
+  addTask(taskObject)
+  updateTasks()
+  taskName = "" 
+  taskCategory = ""
+  taskDeadline = ""
+  taskStatus = ""
+  alert(taskObject)
 })
 
-
+alert({a:1,b:2})
 
 
 
