@@ -1,17 +1,4 @@
 myTasks = [] // array containing the task objects
-
-function addTask(task) {
-    if (myTasks.includes(task.name)) { // .name added to check only name of task
-        return alert(`${task.name} is already a task!`)
-    } else {
-        myTasks.push(task) //add task object to the myTasks array
-    }
-}
-
-function filterTasks(searchTerm) {
-    return myTasks.filter(x=>x.includes(searchTerm))
-}
-
 taskName = document.getElementById("taskName");
 taskCategory = document.getElementById("taskCategory");
 taskDeadline = document.getElementById("taskDeadline");
@@ -19,25 +6,46 @@ taskStatus = document.getElementById("taskStatus");
 addTaskButton = document.getElementById("addTaskButton");
 taskList = document.getElementById("taskList");
 
+function addTask(task) {
+        myTasks.push(task) //add task object to the myTasks array
+}
+
+function updateStatus(update) {
+
+}
+
+function filterTasks(searchTerm) {
+    return myTasks.filter(x=>x.includes(searchTerm)) // UPDATE TO HANDLE OBJECTS
+}
+
 function updateTasks() {
     taskList.innerHTML = ""
     for (i=0;i<myTasks.length;i++) {
         listTask = document.createElement("ul") // changed from li to ul to contain sublist
-        listName = document.createElement("li") 
+        listName = document.createElement("li") // the sublist
         listCategory = document.createElement("li")
         listDeadline = document.createElement("li")
         listStatus = document.createElement("li")
-        listName.innerText = myTasks[i].name
-        listCategory.innerText = myTasks[i].category
-        listDeadline.innerText = myTasks[i].deadline
-        listStatus.innerText = myTasks[i].status
- 
-        listTask.appendChild(listName)
-        listTask.appendChild(listCategory)
-        listTask.appendChild(listDeadline)
-        listTask.appendChild(listStatus)
-        taskList.appendChild(listTask)
-        taskList.appendChild(document.createElement("p"))
+
+
+        updateStatusDropdown = document.createElement("select") //creates the dropdown menu
+        optionInProgress = document.createElement("option") //creates dropdown options
+        optionCompleted = document.createElement("option")
+        optionOverdue = document.createElement("option")
+        optionInProgress.innerHTML = "In Progress"
+        optionCompleted.innerHTML = "Completed"
+        optionOverdue.innerHTML = "Overdue"
+
+        
+
+        listName.innerText = "Task: " + myTasks[i].name
+        listCategory.innerText = "Category: " + myTasks[i].category
+        listDeadline.innerText = "Deadline: " + myTasks[i].deadline
+        listStatus.innerText = "Status: " + myTasks[i].status
+        updateStatusDropdown.append(optionInProgress, optionCompleted, optionOverdue)
+        listStatus.append(updateStatusDropdown)
+        listTask.append(listName, listCategory, listDeadline, listStatus, updateStatusDropdown) // append sublist to list (task)
+        taskList.append(listTask, document.createElement("p")) // append list (task) to list (list of tasks)
     }
 }
 
@@ -48,7 +56,6 @@ addTaskButton.addEventListener("click", function () {
     deadline:taskDeadline.value,
     status:taskStatus.value
   }
- alert(taskObject.name) // Dev alert to show taskObject receives data. Helpful to know when to use .value
   if (taskObject.name === "" || taskObject.category === "" || taskObject.deadline === "" || taskObject.status === "") {
     alert("Please enter all fields before adding a task!")
     return 
@@ -59,10 +66,7 @@ addTaskButton.addEventListener("click", function () {
   taskCategory.value = ""
   taskDeadline.value = ""
   taskStatus.value = ""
-  alert(taskObject)
 })
-
-// alert({a:1,b:2}) // Test to see how objects are shown to the user [object Object]. Keep for reference for when [object Object] shows up again
 
 
 
