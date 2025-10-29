@@ -12,7 +12,6 @@ function filterTasks(searchTerm) {
     return myTasks.filter(x=>x.includes(searchTerm))
 }
 
-
 taskName = document.getElementById("taskName");
 taskCategory = document.getElementById("taskCategory");
 taskDeadline = document.getElementById("taskDeadline");
@@ -23,9 +22,20 @@ taskList = document.getElementById("taskList");
 function updateTasks() {
     taskList.innerHTML = ""
     for (i=0;i<myTasks.length;i++) {
-        listTask = document.createElement("li")
-        listInner = document.createElement("li")
-        listTask.innerText = myTasks[i]
+        listTask = document.createElement("ul") // changed from li to ul to contain sublist
+        listName = document.createElement("li") 
+        listCategory = document.createElement("li")
+        listDeadline = document.createElement("li")
+        listStatus = document.createElement("li")
+        listName.innerText = myTasks[i].name
+        listCategory.innerText = myTasks[i].category
+        listDeadline.innerText = myTasks[i].deadline
+        listStatus.innerText = myTasks[i].status
+ 
+        listTask.appendChild(listName)
+        listTask.appendChild(listCategory)
+        listTask.appendChild(listDeadline)
+        listTask.appendChild(listStatus)
         taskList.appendChild(listTask)
     }
 }
