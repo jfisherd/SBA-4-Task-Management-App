@@ -78,3 +78,24 @@ addTaskButton.addEventListener("click", function () {
     taskName.value = ""
     taskCategory.value = ""
 })
+
+
+
+function filterCategory() {
+
+}
+
+function filterStatus() {
+
+}
+
+categoryFilter = document.getElementById("categoryFilter")
+statusFilter = document.getElementById("statusFilter")
+
+categoryFilter.addEventListener("change", function() {
+    filterCategory()
+})
+
+statusFilter.addEventListener("change", function() {
+    filterStatus()
+})

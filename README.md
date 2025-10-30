@@ -26,9 +26,11 @@ Add a task to the list by inputting a task name and category, selecting the dead
     What you would improve if given more time.
 -->
 
-Challenges faced. Approaches to challenges
+### Challenges faced. Approaches to challenges
 
     Difficult to tell when code runs. Inserted alert functions to flag if code runs.
+
+    Status does not update correctly based on current day. Attempts were made with Date() and Date.now(), however were unsuccessful.
 
     Could not get addEventListener to apply to option elements. 
     Applied addEventListener to a select element instead.
@@ -44,12 +46,12 @@ Challenges faced. Approaches to challenges
         Changed script element to a link element, no error and styles apply.
 
 
-If given more time:
+### If given more time:
 
-    Styling
+    Filtering functions need logic to dynamically update the list shown to the user.
 
-    Label the input fields
-
+    Styling, nothing currently makes it stand out.
+    
     Use input fields for all four inputs, since that is specified in the instructions. 
     Better responsiveness by alerting exactly which fields are still blank
     Inputs would be checked for validity
