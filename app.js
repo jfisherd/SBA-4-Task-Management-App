@@ -22,7 +22,6 @@ function updateStatus() {
                 taskStatusText.innerHTML = "Overdue"
             }
         })
-
     }
 }
 

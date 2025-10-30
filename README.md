@@ -6,7 +6,7 @@
 
 
 
-# KBA 4, Task Management App
+# SBA 4, Task Management App
 
 ## Description
 In this lab an application is built which allows the user to make a task list. Each task listed includes a name, category, deadline, and status. Features include adding customized tasks, updating task statuses, and filtering by either category or status.
@@ -30,13 +30,19 @@ Challenges faced. Approaches to challenges
 
     Difficult to tell when code runs. Inserted alert functions to flag if code runs.
 
-    Could not get addEventListener to apply to option elements. Applied addEventListener to a select element instead
+    Could not get addEventListener to apply to option elements. 
+    Applied addEventListener to a select element instead.
     
-    document.getElementById outputs an object, document.
+    document.getElementById outputs a single object.
     document.getElementsByClassName outputs an HTMLCollection.
     Replaced all cases of getElementsByClassName with getElementById to make object referencing easier.
 
-    Getting styles.css to be processed as a stylesheet. Used rel="stylesheet" in script element attempt fix, no change observed.
+    Difficulty getting styles.css to be processed as a stylesheet, error in console and no styling applied. 
+        Used rel="stylesheet" in script element attempt fix, no change observed.
+        Refreshed Chrome based on internet suggestion, no change observed.
+        Changed src="styles.css" to href="styles.css", no error this time, still no styling applied.
+        Changed script element to a link element, no error and styles apply.
+
 
 If given more time:
 
@@ -50,4 +56,5 @@ If given more time:
         Input for date field must be formatted correctly, placeholder text and label to show example
         Allow user to Enter any status they want, however will still default to overdue when due date passes
 
-    Attempt to use semantic HTML and ARIA to allow full navigation on a screenreader. Add a jump to main content feature to screenreaders can get right to reading the tasks already on the list.
+    Use semantic HTML and ARIA to allow full navigation on a screenreader. 
+    Add a jump to main content feature so screenreaders can get right to reading the tasks already on the list.
