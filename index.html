@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SBA 4</title>
     <script defer src="index.js"></script>
 </head>
+
 <body>
     <input id="taskName" type="text" placeholder="Enter task name" />
     <input id="taskCategory" type="text" placeholder="Enter category" />
     <input id="taskDeadline" type="date" placeholder="Enter deadline" />
     <input id="taskStatus" type="text" placeholder="Enter status" />
-
     <button id="addTaskButton">Add Task</button>
+    <select id="categoryFilter">
+        <option>Filter by category</option>
+    </select>
+    <select id="statusFilter">
+        <option>Filter by status</option>
+    </select>
     <ul id="taskList"></ul>
+
 </body>
+
 </html>
