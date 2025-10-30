@@ -1,9 +1,9 @@
 * {
-    background-color: gray;
+    background-color: lightgrey;
 }
 
-header {
+/* header {
     display:grid;
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(5, 1fr);
-}
+} */

@@ -14,23 +14,28 @@
 
 <body>
     <header>
-        <input id="taskName" type="text" placeholder="Enter task name" />
-        <input id="taskCategory" type="text" placeholder="Enter category" />
+        <label for="taskName">Input task name:</label>
+        <input id="taskName" type="text" placeholder="Task name" />
+        <label for="taskName">Input category:</label>
+        <input id="taskCategory" type="text" placeholder="Category" />
+        <label for="taskDeadline">Select deadline:</label>
         <input id="taskDeadline" type="date" />
+        <label for="taskStatus">Select status:</label>
         <select id="taskStatus">
             <option>In Progress</option>
             <option>Completed</option>
             <option>Overdue</option>
         </select>
         <button id="addTaskButton">Add Task</button>
-        <p></p>
+    </header>
+    <nav>
         <select id="categoryFilter">
             <option>Filter by category</option>
         </select>
         <select id="statusFilter">
             <option>Filter by status</option>
         </select>
-    </header>
+    </nav>
     <main>
         <ul id="taskList"></ul>
     </main>

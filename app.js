@@ -77,5 +77,4 @@ addTaskButton.addEventListener("click", function () {
     updateStatus()
     taskName.value = ""
     taskCategory.value = ""
-    taskStatus.value = "In Progress"
 })

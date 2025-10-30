@@ -51,6 +51,7 @@ If given more time:
     Label the input fields
 
     Use input fields for all four inputs, since that is specified in the instructions. 
+    Better responsiveness by alerting exactly which fields are still blank
     Inputs would be checked for validity
         Not empty for any fields
         Input for date field must be formatted correctly, placeholder text and label to show example
