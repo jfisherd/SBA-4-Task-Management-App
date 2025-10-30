@@ -36,6 +36,8 @@ Challenges faced. Approaches to challenges
     document.getElementsByClassName outputs an HTMLCollection.
     Replaced all cases of getElementsByClassName with getElementById to make object referencing easier.
 
+    Getting styles.css to be processed as a stylesheet. Used rel="stylesheet" in script element attempt fix, no change observed.
+
 If given more time:
 
     Styling

@@ -41,7 +41,7 @@ function updateTasks() {
         listCategory = document.createElement("li") // the sublist
         listDeadline = document.createElement("li") // the sublist
         listStatus = document.createElement("li") // the sublist
-        // listStatus.setAttribute("id", "taskStatusText" + `${i}`)
+        listStatus.setAttribute("id", "taskStatusText" + `${i}`) // sets an id to the listStatus list element
 
         optionInProgress = document.createElement("option") //creates dropdown option
         optionCompleted = document.createElement("option") //creates dropdown option
