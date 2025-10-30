@@ -40,7 +40,7 @@ function updateTasks() {
         listCategory = document.createElement("li") // the sublist
         listDeadline = document.createElement("li") // the sublist
         listStatus = document.createElement("li") // the sublist
-        listStatus.setAttribute("id", "taskStatusText" + `${i}`)
+        // listStatus.setAttribute("id", "taskStatusText" + `${i}`)
 
         optionInProgress = document.createElement("option") //creates dropdown option
         optionCompleted = document.createElement("option") //creates dropdown option
@@ -78,5 +78,5 @@ addTaskButton.addEventListener("click", function () {
     taskName.value = ""
     taskCategory.value = ""
     taskDeadline.value = ""
-    taskStatus.value = ""
+    taskStatus.value = "In Progress"
 })
