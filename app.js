@@ -3,6 +3,7 @@ myTasksFiltered = [] // array for filtered tasks
 taskName = document.getElementById("taskName") //task info
 taskCategory = document.getElementById("taskCategory") //task info
 taskDeadline = document.getElementById("taskDeadline") //task info
+// taskDeadline = Date(Date.now()+86400) // defaults selected due date to tomorrow NOT WORKING. KEEP FOR FUTURE IMPLEMENTATION
 taskStatus = document.getElementById("taskStatus") //task info
 addTaskButton = document.getElementById("addTaskButton") // add button
 taskList = document.getElementById("taskList") // the unordered list
@@ -17,7 +18,7 @@ function updateStatus() {
             alert("Flag 1")
             taskStatusText = document.getElementById("taskStatusText" + `${i}`)
             if (taskStatusText.innerHTML != "Completed") { // Date() > myTasks[i].deadline) { // && ) {
-                alert("glafg 2")
+                alert("Flag 2")
                 taskStatusText.innerHTML = "Overdue"
             }
         })
